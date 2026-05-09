@@ -1,17 +1,25 @@
 <template>
     <div class="body">
-        <Aside />
+        <Aside @menu-selected="activeIndex = $event" />
         
         <div class="mainContent">
-            123
+            <component :is="currentComponent"></component>
         </div>
     </div>
 </template>
 
 
 <script setup>
+import { computed, ref } from 'vue';
 import Aside from '../components/Aside.vue';
+import Dashboard from '../components/Dashboard.vue'
+import UserManage from '../components/UserManage.vue'
+import FaceRecognition from '../components/FaceRecognition.vue';
+import PassRecord from '../components/PassRecord.vue'
 
+const activeIndex = ref(0)
+const components = [Dashboard, UserManage, FaceRecognition, PassRecord]
+const currentComponent = computed(() => components[activeIndex.value])
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-    控制台
+    门禁识别
 </template>
 
 <script setup>
