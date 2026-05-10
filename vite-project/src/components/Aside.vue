@@ -9,24 +9,20 @@
                 <p>人脸识别门禁系统</p>
             </div>
         </header>
-        
+
         <nav>
             <ul>
-                <li 
-                    v-for="(item, index) in menu" 
-                    :key="index"
-                    :class="{ active: activeIndex === index}"
-                    @click="select(index)"
-                >
+                <li v-for="(item, index) in menu" :key="index" :class="{ active: activeIndex === index }"
+                    @click="select(index)">
                     <img src="../assets/vue.svg" alt="Arrow" />
-                    {{  item  }}
+                    {{ item }}
                 </li>
             </ul>
         </nav>
 
         <footer class="footer">
             <div class="system-status">
-                <li>系统运行中</li>
+                <p>系统正常运行中</p>
                 <p>所有门禁设备在线</p>
             </div>
         </footer>
@@ -49,13 +45,14 @@ function select(index) {
 </script>
 
 <style lang="scss" scoped>
-$font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+$font-family: "Noto Sans SC";
 $font-color: black;
-$normal-font-size: 14px;
 $active-color: #2463eb;
 $hover-color: #f1f5f9;
-$border-radius: 10px;
-$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$border-radius: 0.75rem;
+$normal-font-size: 0.875rem;
+$small-font-size: 0.625rem;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
 @mixin img($size: 40px) {
     width: $size;
@@ -70,8 +67,8 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: left;
-    
-    
+
+
     .header {
         display: flex;
 
@@ -90,7 +87,7 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            
+
             p {
                 color: $font-color;
                 font-size: $normal-font-size;
@@ -129,14 +126,14 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
                 &:hover {
                     background-color: $hover-color;
-                    border-radius: 10px;
+                    border-radius: $border-radius;
                     transition: background-color 0.3s ease;
                 }
 
                 &.active {
                     color: white;
                     background-color: $active-color;
-                    border-radius: 10px;
+                    border-radius: $border-radius;
                 }
 
                 img {
@@ -152,8 +149,8 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-top: auto;
         width: 100%;
         padding: 10px;
-        background-color: #d7d9da;
-        border-radius: 0.75rem;
+        background-color: #fcf7f7;
+        border-radius: $border-radius;
         box-shadow: $box-shadow;
 
         .system-status {
@@ -165,15 +162,8 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 margin-left: 20px;
             }
 
-            li {
-                list-style: none;
-                font-size: $normal-font-size;
-                color: $font-color;
-                margin-bottom: 5px;
-            }
-
             p {
-                font-size: $normal-font-size;   
+                font-size: $small-font-size;
                 color: $font-color;
             }
         }

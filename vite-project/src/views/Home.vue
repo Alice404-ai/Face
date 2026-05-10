@@ -1,7 +1,7 @@
 <template>
     <div class="body">
         <Aside @menu-selected="activeIndex = $event" />
-        
+
         <div class="mainContent">
             <component :is="currentComponent"></component>
         </div>

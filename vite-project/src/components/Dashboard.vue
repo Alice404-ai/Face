@@ -13,7 +13,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png" >
+                    <img src="../assets/shield-solid.png">
                 </div>
             </div>
             <div class="base-info">
@@ -23,7 +23,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png" >
+                    <img src="../assets/shield-solid.png">
                 </div>
             </div>
             <div class="base-info">
@@ -33,7 +33,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png" >
+                    <img src="../assets/shield-solid.png">
                 </div>
             </div>
             <div class="base-info">
@@ -43,7 +43,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png" >
+                    <img src="../assets/shield-solid.png">
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ $border-radius: 0.75rem;
     flex-direction: column;
     padding: 10px;
     padding-right: 50px;
-    gap: 20px;  
+    gap: 20px;
 
     .header {
         display: flex;
@@ -145,6 +145,7 @@ $border-radius: 0.75rem;
             height: 100px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            background-color: white;
 
             &:hover {
                 transition: scale(1.5);
@@ -162,7 +163,6 @@ $border-radius: 0.75rem;
                 }
 
                 p {
-
                     font-size: 12px;
 
                     &:nth-child(2) {
@@ -192,6 +192,7 @@ $border-radius: 0.75rem;
             flex: 2;
             border: $normal-border;
             border-radius: $border-radius;
+            background-color: white;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -210,6 +211,7 @@ $border-radius: 0.75rem;
             border: $normal-border;
             border-radius: $border-radius;
             height: 100px;
+            background-color: white;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -235,10 +237,6 @@ $border-radius: 0.75rem;
                     .content {
                         display: flex;
                         flex-direction: column;
-
-                        p {
-
-                        }
                     }
                 }
             }
