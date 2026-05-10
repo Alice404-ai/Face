@@ -23,18 +23,17 @@ const currentComponent = computed(() => components[activeIndex.value])
 </script>
 
 <style lang="scss" scoped>
-
 .body {
     display: flex;
     width: 100%;
-    height: 100vh;
+    max-height: 100%;
 
- 
     .mainContent {
         flex: 1;
         padding: 20px;
         border: 1px solid #ccc;
         background-color: #f6f7f9;
+        overflow-y: auto;
     }
 }
 </style>
