@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 
 const menu = ['控制台', '人员管理', '门禁识别', '通行记录']
 const activeIndex = ref(0)
@@ -54,6 +54,7 @@ $font-color: black;
 $normal-font-size: 14px;
 $active-color: #2463eb;
 $hover-color: #f1f5f9;
+$border-radius: 10px;
 $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 @mixin img($size: 40px) {
@@ -64,7 +65,7 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 .aside {
     font-family: $font-family;
-    width: 250px;
+    width: 220px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -86,11 +87,10 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         .title {
             font-size: 24px;
-            font-weight: bold;
             display: flex;
             flex-direction: column;
             justify-content: center;
-
+            
             p {
                 color: $font-color;
                 font-size: $normal-font-size;
@@ -120,24 +120,23 @@ $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 font-size: $normal-font-size;
                 width: 100%;
                 height: 30px;
-                border-radius: 5px;
                 padding: 5px;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
                 padding: 5px;
-                gap: 5px;
+                gap: 10px;
 
                 &:hover {
                     background-color: $hover-color;
-                    border-radius: 5px;
+                    border-radius: 10px;
                     transition: background-color 0.3s ease;
                 }
 
                 &.active {
                     color: white;
                     background-color: $active-color;
-                    border-radius: 5px;
+                    border-radius: 10px;
                 }
 
                 img {
