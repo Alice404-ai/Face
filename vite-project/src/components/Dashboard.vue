@@ -51,12 +51,22 @@
         <div class="tables">
             <div class="pass-trend">
                 <h1>今日通行趋势</h1>
-                <div class="chart">
-                    <Charts />
-                </div>
+                <Charts />
             </div>
             <div class="recently-pass-record">
-
+                <h1>最近通行记录</h1>
+                <ul>
+                    <li>
+                        <div>
+                            123
+                        </div>
+                        <div class="content">
+                            <P>123</P>
+                            <p>123</p>
+                        </div>
+                        <div>123</div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -70,14 +80,20 @@ import Charts from './Charts.vue';
 <style lang="scss" scoped>
 $normal-font-color: #65758b;
 $bold-font-color: black;
+$normal-border: 0.5px solid rgb(154, 154, 154);
+$border-radius: 0.75rem;
 
-
-@mixin h1($font-weight: bold, $font-size: 1.5rem, $color: black) {
+@mixin h1($font-weight: bold, $font-size: 1.5rem, $color: black, $letter-spacing: 2px) {
+    letter-spacing: $letter-spacing;
     font-weight: $font-weight;
     font-size: $font-size;
     font-style: italic;
     color: $color;
     margin: 0;
+}
+
+@mixin p($font-size: 0.875rem) {
+    font-size: $font-size;
 }
 
 @mixin img($size: 40px) {
@@ -106,7 +122,7 @@ $bold-font-color: black;
         }
 
         p {
-            font-size: 0.875rem;
+            @include p;
         }
     }
 
@@ -122,7 +138,7 @@ $bold-font-color: black;
             display: flex;
             flex-direction: row;
             border-radius: 10px;
-            border: 0.5px solid rgb(154, 154, 154);
+            border: $normal-border;
             align-items: center;
             padding: 15px;
             justify-content: space-between;
@@ -174,30 +190,58 @@ $bold-font-color: black;
 
         .pass-trend {
             flex: 2;
-            border: 2px solid black;
-            border-radius: 0.75rem;
+            border: $normal-border;
+            border-radius: $border-radius;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             padding: 10px;
             padding-top: 20px;
+            padding-left: 20px;
 
             h1 {
                 @include h1(bold, 0.9rem);
-                letter-spacing: 2px;
-            }
-
-            .chart {
-                flex: 1;
-                min-height: 400px;
             }
         }
 
         .recently-pass-record {
             flex: 1;
-            border: 2px solid black;
-            border-radius: 0.75rem;
+            padding: 20px;
+            border: $normal-border;
+            border-radius: $border-radius;
             height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h1 {
+                @include h1(bold, 0.9rem);
+            }
+
+            ul {
+                list-style: none;
+                width: 100%;
+
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 80%;
+                    border: $normal-border;
+                    border-radius: $border-radius;
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+
+                        p {
+
+                        }
+                    }
+                }
+            }
         }
     }
 }

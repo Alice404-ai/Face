@@ -21,13 +21,11 @@ const initChart = () => {
         },
         xAxis: {
             type: 'category',
-            data: hours,
-            name: '时间',
+            data: hours,    
             boundaryGap: false
         },
         yAxis: {
-            type: 'value',
-            name: '通行人数',
+            type: 'value',  
             min: 0
         },
         series: [

@@ -26,7 +26,7 @@ const currentComponent = computed(() => components[activeIndex.value])
 .body {
     display: flex;
     width: 100%;
-    max-height: 100%;
+    height: 100vh;
 
     .mainContent {
         flex: 1;
@@ -34,6 +34,8 @@ const currentComponent = computed(() => components[activeIndex.value])
         border: 1px solid #ccc;
         background-color: #f6f7f9;
         overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
     }
 }
 </style>
