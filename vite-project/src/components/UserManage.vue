@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <div class="header">
-            <div class="info">
+            <div class="headInfo">
                 <h1>人员管理</h1>
                 <p>管理校园门禁授权人员及人脸信息</p>
             </div>
@@ -10,14 +10,80 @@
             </button>
         </div>
         <div class="search-box">
-            <span class="icon">🔍</span>
+            <img src="../assets/search.png" class="icon" alt="搜索按钮" />
             <input type="text" placeholder="搜索姓名、学号、部门..." />
         </div>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>人员信息</th>
+                        <th>学号/工号</th>
+                        <th>角色</th>
+                        <th>部门</th>
+                        <th>人脸状态</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr v-for="item in personList" :key="item.id">
+                        <td>
+                            <div class="person-info">
+                                <div class="avatar">{{ item.name.charAt(0) }}</div>
+                                <span class="name">{{ item.name }}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="info">{{ item.id }}</div>
+                        </td>
+                        <td>
+                            <div class="status">{{ item.role }}</div>
+                        </td>
+                        <td>
+                            <div class="info">{{ item.department }}</div>
+                        </td>
+                        <td>
+                            <div class="status">{{ item.faceStatus }}</div>
+                        </td>
+                        <td>
+                            <div class="status">{{ item.status }}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
 <script setup>
+const personList = [
+    {
+        name: "张三",
+        id: "20231110001",
+        role: "学生",
+        department: "计算机学院",
+        faceStatus: "已录入",
+        status: "正常"
+    },
+    {
+        name: "张三",
+        id: "20231110001",
+        role: "学生",
+        department: "计算机学院",
+        faceStatus: "已录入",
+        status: "正常"
+    },
+    {
+        name: "张三",
+        id: "20231110001",
+        role: "学生",
+        department: "计算机学院",
+        faceStatus: "已录入",
+        status: "正常"
+    },
+]
 </script>
 
 <style lang="scss" scoped>
@@ -50,7 +116,7 @@
         width: 100%;
         padding: 10px;
 
-        .info {
+        .headInfo {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -79,10 +145,126 @@
     }
 
     .search-box {
+        position: relative;
         display: flex;
+        width: 400px;
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 14px;
+        }
 
         input {
-            border-radius: 10px;
+            background-color: #f6f7f9;
+            width: 100%;
+            padding: 10px 10px 10px 36px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+
+            &:focus {
+                border: 1px solid #2463eb;
+            }
+        }
+    }
+
+    .table-wrapper {
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid black;
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+
+            thead {
+                background-color: #f6f7f9;
+                font-size: 12px;
+
+                tr {
+
+                    th {
+                        text-align: left;
+                        padding: 16px 24px;
+
+                        &:last-child {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                background-color: white;
+
+                tr {
+                    border-bottom: 0.5px solid black;
+
+                    &:hover {}
+
+                    &:first-child {
+                        border-top: 0.5px solid black;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    td {
+                        text-align: left;
+                        padding: 14px 16px;
+                        border: none;
+
+                        .person-info {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+
+                            .avatar {
+                                width: 36px;
+                                height: 36px;
+                                border-radius: 50%;
+                                background-color: rgba(36, 99, 235, 0.1);
+                                color: rgba(36, 99, 235);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                flex-shrink: 0;
+                            }
+
+                            .name {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .info {
+                            font-size: 14px;
+                            color: rgb(101, 117, 139);
+                        }
+
+                        .status {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 2px 10px;
+                            border-radius: 20px;
+                            text-align: center;
+                            font-size: 12px;
+                            background-color: rgb(241, 245, 249);
+                            border: 1px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
         }
     }
 }
