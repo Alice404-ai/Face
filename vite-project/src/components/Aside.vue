@@ -2,7 +2,7 @@
     <aside class="aside">
         <header class="header">
             <div class="icon">
-                <img src="../assets/shield-solid.png" alt="Logo" />
+                <img src="../assets/icons/shield-solid.png" alt="Logo" />
             </div>
             <div class="title">
                 <p>智慧校园</p>
@@ -14,7 +14,7 @@
             <ul>
                 <li v-for="(item, index) in menu" :key="index" :class="{ active: activeIndex === index }"
                     @click="select(index)">
-                    <img src="../assets/vue.svg" alt="Arrow" />
+                    <img src="../assets/icons/vue.svg" alt="Arrow" />
                     {{ item }}
                 </li>
             </ul>
@@ -45,9 +45,9 @@ function select(index) {
 </script>
 
 <style lang="scss" scoped>
+
 $font-family: "Noto Sans SC";
 $font-color: black;
-$active-color: #2463eb;
 $hover-color: #f1f5f9;
 $border-radius: 0.75rem;
 $normal-font-size: 0.875rem;

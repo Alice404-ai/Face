@@ -26,7 +26,7 @@ const currentComponent = computed(() => components[activeIndex.value])
 .body {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: $normal-height;
 
     .mainContent {
         flex: 1;

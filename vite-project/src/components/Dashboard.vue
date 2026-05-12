@@ -13,7 +13,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png">
+                    <img src="../assets/icons/shield-solid.png">
                 </div>
             </div>
             <div class="base-info">
@@ -23,7 +23,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png">
+                    <img src="../assets/icons/shield-solid.png">
                 </div>
             </div>
             <div class="base-info">
@@ -33,7 +33,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png">
+                    <img src="../assets/icons/shield-solid.png">
                 </div>
             </div>
             <div class="base-info">
@@ -43,7 +43,7 @@
                     <p>1人已录入人脸</p>
                 </div>
                 <div class="image">
-                    <img src="../assets/shield-solid.png">
+                    <img src="../assets/icons/shield-solid.png">
                 </div>
             </div>
         </div>
@@ -78,30 +78,6 @@ import Charts from './Charts.vue';
 </script>
 
 <style lang="scss" scoped>
-$normal-font-color: #65758b;
-$bold-font-color: black;
-$normal-border: 0.5px solid rgb(154, 154, 154);
-$border-radius: 0.75rem;
-
-@mixin h1($font-weight: bold, $font-size: 1.5rem, $color: black, $letter-spacing: 2px) {
-    letter-spacing: $letter-spacing;
-    font-weight: $font-weight;
-    font-size: $font-size;
-    font-style: italic;
-    color: $color;
-    margin: 0;
-}
-
-@mixin p($font-size: 0.875rem) {
-    font-size: $font-size;
-}
-
-@mixin img($size: 40px) {
-    width: $size;
-    height: $size;
-    object-fit: contain;
-}
-
 .main {
     display: flex;
     flex-direction: column;

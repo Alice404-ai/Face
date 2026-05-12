@@ -79,9 +79,9 @@ onBeforeUnmount(() => {
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .chart {
     width: 100%;
-    height: 500px;
+    height: calc($normal-height / 2);
 }
 </style>

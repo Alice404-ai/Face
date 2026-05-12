@@ -10,7 +10,7 @@
             </button>
         </div>
         <div class="search-box">
-            <img src="../assets/search.png" class="icon" alt="搜索按钮" />
+            <img src="../assets/icons/search.png" class="icon" alt="搜索按钮" />
             <input type="text" placeholder="搜索姓名、学号、部门..." />
         </div>
         <div class="table-wrapper">
@@ -39,16 +39,25 @@
                             <div class="info">{{ item.id }}</div>
                         </td>
                         <td>
-                            <div class="status">{{ item.role }}</div>
+                            <div class="status role">{{ item.role }}</div>
                         </td>
                         <td>
                             <div class="info">{{ item.department }}</div>
                         </td>
                         <td>
-                            <div class="status">{{ item.faceStatus }}</div>
+                            <div class="status face">{{ item.faceStatus }}</div>
                         </td>
                         <td>
                             <div class="status">{{ item.status }}</div>
+                        </td>
+                        <td>
+                            <div class="opration">
+                                <img src="../assets/icons/face-id.png" class="image" />
+                                <img src="../assets/icons/trash-can-solid.png" class="image" />
+                                
+                                <!-- <div class="add-face"></div>
+                                <div class="delete"></div> -->
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -84,23 +93,32 @@ const personList = [
         status: "正常"
     },
 ]
+
+function addFace() {
+    alert('添加脸部照片');
+}
+
+function Delete() {
+    alert('删除');
+}
 </script>
 
 <style lang="scss" scoped>
-@mixin h1($font-weight: bold, $font-size: 1.5rem, $color: black, $letter-spacing: 2px) {
-    letter-spacing: $letter-spacing;
-    font-weight: $font-weight;
-    font-size: $font-size;
-    font-style: italic;
-    color: $color;
-    margin: 0;
+$normal-font-color: #65758b;
+$bold-font-color: black;
+$normal-border: 0.5px solid rgb(154, 154, 154);
+$border-radius: 0.75rem;
+$status-color: rgb(15, 23, 41);
+
+@mixin img($size: 40px) {
+    width: $size;
+    height: $size;
+    object-fit: contain;
 }
 
-@mixin p($font-size: 0.875rem) {
-    font-size: $font-size;
-}
 
 .main {
+    line-height: 1.5rem;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -133,11 +151,11 @@ const personList = [
 
         .add-new-info {
             cursor: pointer;
-            font-size: 14px;
-            gap: 20px;
+            font-size:  $normal-font-size;
+            gap: 1.25rem;
             border-radius: 10px;
             padding: 8px 12px;
-            width: 7%;
+            width: 7.5rem;
             color: white;
             background-color: rgb(36, 99, 235);
             border: none;
@@ -191,7 +209,7 @@ const personList = [
 
                     th {
                         text-align: left;
-                        padding: 16px 24px;
+                        padding: $table-padding;
 
                         &:last-child {
                             text-align: right;
@@ -218,7 +236,7 @@ const personList = [
 
                     td {
                         text-align: left;
-                        padding: 14px 16px;
+                        padding: $small-table-padding;
                         border: none;
 
                         .person-info {
@@ -251,16 +269,30 @@ const personList = [
                         }
 
                         .status {
+                            font-family: 'Noto Sans SC Bold';
                             display: inline-flex;
-                            align-items: center;
-                            justify-content: center;
                             padding: 2px 10px;
                             border-radius: 20px;
                             text-align: center;
                             font-size: 12px;
                             background-color: rgb(241, 245, 249);
                             border: 1px;
-                            font-weight: 600;
+                            font-weight: 700;
+                            color: green;
+                        }
+                        .status.role {
+                            color: $status-color;
+                        }
+                        .status.face {
+                            color: green;
+                        }
+
+                        .opration {
+                            text-align: right;
+                            .image {
+                                cursor: pointer;
+                                @include img(calc($icon-size / 2));
+                            }
                         }
                     }
                 }
